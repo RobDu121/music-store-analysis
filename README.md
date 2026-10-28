@@ -7,6 +7,7 @@ A music store sales analysis project with exported query results and a Power BI 
 | Location | Contents |
 | --- | --- |
 | `SQL_Music_Store_Project.pbix` | Power BI report |
+| `sql/music-store-analysis.sql` | Seven SQLite analysis queries |
 | `exports/new/` | Eight result tables covering revenue and customer analysis |
 | `exports/` | Two additional artist and customer ranking exports |
 
@@ -32,6 +33,10 @@ The two ranking exports directly in `exports/` differ from those in `exports/new
 
 ## Reproducibility
 
-This repository currently includes the saved Power BI report and supplied CSV results. The source project's SQL folder was empty at setup, and no database was supplied. The original SQL queries and database are needed to reproduce the exports from source. The report's refresh behavior has not been tested during repository setup.
+The SQL script contains seven read-only queries for total revenue, revenue by country/month/genre, top artists, top customers, and employee-supported revenue. It uses SQLite syntax, including `STRFTIME` for monthly grouping.
+
+To run it, open your music store SQLite database in a compatible SQL client and execute `sql/music-store-analysis.sql`. It expects the Invoice, InvoiceLine, Track, Genre, Album, Artist, Customer, and Employee tables. A source database is not included.
+
+The supplied SQL and CSVs are preserved as separate project artifacts. Some exported headers differ from the script, the employee query returns different count columns, and the script does not include the customers-by-country query. The CSVs have not been regenerated or verified against this script. The report's refresh behavior has not been tested during repository setup.
 
 Original filenames and CSV column headers are preserved.
