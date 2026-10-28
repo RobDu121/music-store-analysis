@@ -23,8 +23,6 @@ The `exports/new/` folder contains:
 - Top 10 customers by revenue
 - Employees ranked by supported revenue
 
-The two ranking exports directly in `exports/` differ from those in `exports/new/`. Both supplied versions are preserved. Their query definitions and filtering differences have not been verified, so they should not be treated as interchangeable.
-
 ## Open the project
 
 1. Download or clone this repository.
