@@ -8,6 +8,7 @@ A music store sales analysis project with exported query results and a Power BI 
 | --- | --- |
 | `SQL_Music_Store_Project.pbix` | Power BI report |
 | `sql/music-store-analysis.sql` | Seven SQLite analysis queries |
+| `data/Chinook_Sqlite.sqlite` | Supplied Chinook SQLite database |
 | `exports/new/` | Eight result tables covering revenue and customer analysis |
 | `exports/` | Two additional artist and customer ranking exports |
 
@@ -35,8 +36,8 @@ The two ranking exports directly in `exports/` differ from those in `exports/new
 
 The SQL script contains seven read-only queries for total revenue, revenue by country/month/genre, top artists, top customers, and employee-supported revenue. It uses SQLite syntax, including `STRFTIME` for monthly grouping.
 
-To run it, open your music store SQLite database in a compatible SQL client and execute `sql/music-store-analysis.sql`. It expects the Invoice, InvoiceLine, Track, Genre, Album, Artist, Customer, and Employee tables. A source database is not included.
+To run it, open `data/Chinook_Sqlite.sqlite` in a compatible SQL client and execute `sql/music-store-analysis.sql`. It uses the Invoice, InvoiceLine, Track, Genre, Album, Artist, Customer, and Employee tables. All seven queries were successfully executed against the supplied database in read-only mode during repository setup. The total revenue query returned 2,328.60, matching the supplied total-revenue CSV.
 
-The supplied SQL and CSVs are preserved as separate project artifacts. Some exported headers differ from the script, the employee query returns different count columns, and the script does not include the customers-by-country query. The CSVs have not been regenerated or verified against this script. The report's refresh behavior has not been tested during repository setup.
+The supplied SQL and CSVs are preserved as separate project artifacts. Some exported headers differ from the script, the employee query returns different count columns, and the script does not include the customers-by-country query. The CSVs have not been regenerated or fully reconciled against this script. The report's refresh behavior has not been tested during repository setup.
 
 Original filenames and CSV column headers are preserved.
